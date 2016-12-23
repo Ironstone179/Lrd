@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <style type="text/css">
+     body { 
+	margin: 0;
+	background: url(fon2.jpg)  no-repeat;
+	height: 100%;
+        background-size: cover;
+	background-attachment: fixed;
+}
+	a { 
+	color: white;
+	text-decoration: none;
+} 
+   </style>
+  <title> Путеводитель по Лордерону</title>
+ <link rel="shortcut icon" href="icon.png" type="image/png">
+
+<script type="text/javascript" language="JavaScript">// <![CDATA[
+ var res="3134"; 
+function check_me()
+{
+    var count=0;
+    with(document.test) {
+if (!Q1[0].checked&&!Q1[1].checked&&!Q1[2].checked&&!Q1[3].checked)  
+{count+=1};  
+if (!Q2[0].checked&&!Q2[1].checked&&!Q2[2].checked&&!Q2[3].checked)  
+{count+=1};  
+if (!Q3[0].checked&&!Q3[1].checked&&!Q3[2].checked&&!Q3[3].checked)  
+{count+=1};  
+if (!Q4[0].checked&&!Q4[1].checked&&!Q4[2].checked&&!Q4[3].checked)  
+{count+=1};  
+if (count>0) alert("Вы ответили не на все вопросы!")    
+        else answer();
+    }
+} 
+ 
+function control(k, f1,f2,f3,f4) {
+if (k==1&&f1.checked) return true;
+if (k==2&&f2.checked) return true;
+if (k==3&&f3.checked) return true;
+if (k==4&&f4.checked) return true;
+return false;
+}
+
+function answer() {
+answ="";
+     with(document)    {
+    answ+=control(res.charAt(0) ,test.Q1[0],test.Q1[1],test.Q1[2],test.Q1[3])?"1":"0";
+answ+=control(res.charAt(1) ,test.Q2[0],test.Q2[1],test.Q2[2],test.Q2[3])?"1":"0";
+answ+=control(res.charAt(2) ,test.Q3[0],test.Q3[1],test.Q3[2],test.Q3[3])?"1":"0";
+answ+=control(res.charAt(3) ,test.Q4[0],test.Q4[1],test.Q4[2],test.Q4[3])?"1":"0";
+
+showResult();
+    }
+}
+ 
+function showResult()   {
+    var nok=0;
+    var i,s;
+ 
+for (i=0; i<answ.length;i++) {nok+=answ.charAt(i)=="1"?1:0;}
+if(nok==4) s="Отлично! ";
+if(nok<4) s="Хорошо! ";
+if(nok<3) s="Неплохо! ";
+if (nok<2) s="Ну, такое..";
+    document.test.s1.
+    value=""+s+"Количество правильных ответов: "+nok+". Верные и ошибочные ответы были помечены плюсами и минусами соостветственно.";
+ 
+with(document.test)
+    {
+    if (answ.charAt(0)=="1") {T1.value=" + "} else {T1.value=" - "};
+   if (answ.charAt(1)=="1") {T2.value=" + "} else {T2.value=" - "};
+   if (answ.charAt(2)=="1") {T3.value=" + "} else {T3.value=" - "};
+   if (answ.charAt(3)=="1") {T4.value=" + "} else {T4.value=" - "};
+     }
+}
+function showhide(obj){
+    if(obj == 'none') return 'inline';
+    else return 'none';
+}
+// ]]>
+</script>
+</head>
+
+
+<body>
+<table background="fon1.jpg" width="100%">
+<tr>
+   <td> <font size="5" face="comic sans ms"><a href="index.html">Путеводитель по Лордерону</a></font> </td>
+</tr>
+</table>
+
+<hr/>
+  <h1 align="center"> <font color="#ffffff"> <i> Несколько вопросов на понимание </i> </h1> </font>
+<hr/>
+<form name="test"><ol>
+ <table border = "2" background="fon1.jpg" width="98%">
+<tr>
+   <td width="50%">
+   </br><INPUT type="text" size="1" value="" name="T1"/><b><font color="#ffffff"> Чьей династией управлялся Лордерон?</b><br/>
+	<input type="radio" value="0" name="Q1"/> Династией Манилов<br />
+	<input type="radio" value="1" name="Q1"/> Династией Этилов<br />
+	<input type="radio" value="2" name="Q1"/> Династией Менетилов<br />
+	<input type="radio" value="3" name="Q1"/> Династией Трандуилов<br />
+   </td>
+   <td width="50%">
+   </br><INPUT type="text" size="1" value="" name="T2"/><b><font color="#ffffff"> На какой континент был перенесён Даларан во время войны с Королём Личём?</b><br/>
+	<input type="radio" value="0" name="Q2"/> Нордскол<br />
+	<input type="radio" value="1" name="Q2"/> Калимдор<br />
+	<input type="radio" value="2" name="Q2"/> Восточные Королевства<br />
+	<input type="radio" value="3" name="Q2"/> Северная Америка<br />
+   </td>
+</tr>
+<tr>
+   <td width="50%">
+   </br><INPUT type="text" size="1" value="" name="T3"/><b><font color="#ffffff"> Кем управлялся Дольный Очаг</b><br/>
+	<input type="radio" value="0" name="Q3"/> Болваром Фордрагоном<br />
+	<input type="radio" value="1" name="Q3"/> Дарионом Могрейном<br />
+	<input type="radio" value="2" name="Q3"/> Тирионом Фордрингом<br />
+	<input type="radio" value="3" name="Q3"/> Тирионом Ланнистером<br />
+   </td>
+   <td width="50%">
+   </br><INPUT type="text" size="1" value="" name="T4"/><b><font color="#ffffff"> Какой город был центром для всех сельскохозяйственных поставок в северных провинциях Лордерона?</b><br/>
+	<input type="radio" value="0" name="Q4"/> Даларан<br />
+	<input type="radio" value="1" name="Q4"/> Стратхольм<br />
+	<input type="radio" value="2" name="Q4"/> Дольный очаг<br />
+	<input type="radio" value="3" name="Q4"/> Андорал<br />
+   <br/></ol>
+   </td> 
+</tr>
+</table>
+     
+<CENTER>
+ <P><TEXTAREA name="s1" rows="4" cols="70" readonly> </TEXTAREA> </P>
+   <INPUT onclick="check_me()" type="button" value="Показать результат"/>&nbsp;&nbsp;&nbsp;&nbsp; 
+   <INPUT type="reset" value="Сбросить ответы"/> 
+</CENTER>        
+</form>
+
+<hr/>
+
+<font color="white" face="comic sans ms">
+ <table border = "0" width = "100%">
+   <tr>
+	<td align="left"> vk.com/id35269509 </td>
+	<td align="center"> muzhele@mail.ru </td>
+	<td align="right"> dz.hse7.ru/Muzhelevskiy </td>
+   </tr>
+ </table>
+</font>
+</body>
+</html>
